@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator_V1</title>
+    <style>
+        .achtergrond {
+            background-color: #dda01c;
+            width: 300px;
+            height: 400px;
+            margin: auto;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .scherm {
+        width: 97%;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-align: right;
+        padding: 5px;
+    }
+    
+    .knop {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .knop:hover {
+        background-color: #d9d9d9;
+    }
+</style>
+<script>
+    // Voeg hier je Javascript code toe
+</script>
+</head>
+<body>
+    <div class="achtergrond">
+        <input class="scherm" id="scherm" type="text" readonly>
+        <div class="knoppencontainer">
+            <button class="knop" onclick="addToScreen('7')">7</button>
+            <button class="knop" onclick="addToScreen('8')">8</button>
+            <button class="knop" onclick="addToScreen('9')">9</button>
+            <button class="knop" onclick="addToScreen('/')">/</button>
+            <br>
+            <button class="knop" onclick="addToScreen('4')">4</button>
+            <button class="knop" onclick="addToScreen('5')">5</button>
+            <button class="knop" onclick="addToScreen('6')">6</button>
+            <button class="knop" onclick="addToScreen('*')">*</button>
+            <br>
+            <button class="knop" onclick="addToScreen('1')">1</button>
+            <button class="knop" onclick="addToScreen('2')">2</button>
+            <button class="knop" onclick="addToScreen('3')">3</button>
+            <button class="knop" onclick="addToScreen('-')">-</button>
+            <br>
+            <button class="knop" onclick="addToScreen('0')">0</button>
+            <button class="knop" onclick="addToScreen('.')">.</button>
+            <button class="knop" onclick="calculate()">=</button>
+            <button class="knop" onclick="addToScreen('+')">+</button>
+            <br>
+            <button class="knop" onclick="clearScreen()">C</button>
+            <button class="knop" onclick="deleteLast()">DEL</button>
+        </div>
+    </div>
+    <script>
+        function addToScreen(value) {
+            document.getElementById("scherm").value += value;
+        }
+        function calculate() {
+        document.getElementById("scherm").value = eval(document.getElementById("scherm").value);
+    }
+    function clearScreen() {
+        document.getElementById("scherm").value = "";
+    }
+    function deleteLast() {
+        document.getElementById("scherm").value = "";
+    }
+
+
+</script>
+</body>
+</html>
